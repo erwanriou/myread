@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './App.css';
 import SearchBar from '../searchbar/SearchBar.js';
 import BooksList from '../bookslist/BooksList.js';
 import * as BookAPI from '../../util/bookAPI.js';
@@ -13,7 +14,7 @@ class App extends React.Component  {
   }
 
   componentDidMount() {
-    BookAPI.getAll().then(books => this.setState({books: books}));
+    BookAPI.search('linux').then(books => this.setState({books: books}));
   }
 
 
@@ -24,7 +25,7 @@ class App extends React.Component  {
         <header>
           <SearchBar />
         </header>
-        <BooksList />
+        <BooksList books={this.state.books}/>
       </div>
     );
   }

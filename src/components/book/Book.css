@@ -1,0 +1,38 @@
+.book {
+  position: relative;
+  width: calc(20% - 1px);
+  height: auto;
+  overflow: hidden;
+  justify-content: center;
+  margin-right: 1px;
+  margin-top: 1px;
+  opacity: 0.5;
+}
+
+.book:hover {
+  opacity: 1;
+}
+
+.book img {
+  position: relative;
+  width: 100%;
+
+}
+.book .image {
+  height: 10rem;
+  overflow: hidden;
+}
+
+.book h1, .book h2 {
+  font-size: 15px;
+  z-index: 1000;
+
+}
+
+.book h1 {
+
+}
+
+.book h2 {
+
+}

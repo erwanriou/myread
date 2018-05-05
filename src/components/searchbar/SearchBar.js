@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
   render () {
     return (
       <div>
-        test
+        <input type="text" placeholder="Write the book you want to look for here"/>
       </div>
     )
   }
