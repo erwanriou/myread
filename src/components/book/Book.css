@@ -1,6 +1,6 @@
 .book {
   position: relative;
-  width: calc(20% - 1px);
+  width: calc(10% - 1px);
   height: auto;
   overflow: hidden;
   justify-content: center;
@@ -20,7 +20,7 @@
 
 }
 .book .image {
-  height: 10rem;
+  height: 8rem;
   overflow: hidden;
 }
 

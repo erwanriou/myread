@@ -16,6 +16,7 @@ class SearchBar extends React.Component {
           onClick={this.props.clearQuery}>
           Show all
         </button>
+
       </div>
     )
   }
