@@ -6,6 +6,7 @@
   justify-content: center;
   margin-right: 1px;
   margin-top: 1px;
+  background-color: #b5b5b5;
   opacity: 0.5;
 }
 
@@ -23,7 +24,13 @@
   overflow: hidden;
 }
 
+.book .text {
+  height: 10rem;
+  color: white;
+}
+
 .book h1, .book h2 {
+  margin: 2rem;
   font-size: 15px;
   z-index: 1000;
 
