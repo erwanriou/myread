@@ -1,6 +1,7 @@
 import React from 'react';
 // importing components from the app
 import './App.css';
+import Main from '../main/Main.js';
 import SearchBar from '../searchbar/SearchBar.js';
 import BooksList from '../bookslist/BooksList.js';
 import * as BookAPI from '../../util/bookAPI.js';
@@ -44,13 +45,20 @@ class App extends React.Component  {
   render() {
     return (
       <div>
-        <header>
-          <SearchBar
-            query={this.state.query}
-            updateQuery={this.updateQuery}
-          />
-        </header>
-        <BooksList books={this.state.books}/>
+        {/* Main landing page */}
+        <Route exact path='/' render={() => (
+          <Main />
+        )} />
+        {/* Page to Search new books */}
+        <Route exact path='/search' render={() => (
+          <div>
+            <SearchBar
+              query={this.state.query}
+              updateQuery={this.updateQuery}
+            />
+            <BooksList books={this.state.books}/>
+          </div>
+        )} />
       </div>
     );
   }
