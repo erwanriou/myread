@@ -1,16 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Book.css';
+import noImage from '../../images/No_Image_Available.jpg'
 
 class Book extends React.Component {
-  static propTypes = {
-    book: PropTypes.string.isRequired
-  }
 
+  //function to check if thumbnail exist and remplace if not
   checkThumbnail() {
-    if (!this.props.book.imageLinks.thumbnail) {
+    if (!this.props.book.imageLinks) {
       return   <img
-          src='#'
+          src={noImage}
           alt={this.props.book.title}/>
     } else {
       return <img
