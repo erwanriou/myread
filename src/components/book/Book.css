@@ -6,16 +6,16 @@
   justify-content: center;
   margin-right: 30px;
   margin-top: 30px;
-  background-color: #6d6d6d;
+  background-color: white;
   border-radius: 1rem;
-  filter: grayscale(1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  transition: 0.5s linear;
+  filter:opacity(0.5);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.2s linear;
 }
 
 .book:hover {
-  filter: grayscale(0);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  filter: opacity(1);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .book img {
@@ -30,20 +30,57 @@
 
 .book .text {
   height: 10rem;
-  color: white;
+  color: black;
 }
 
-.book h1, .book h2 {
-  margin: 2rem;
-  font-size: 15px;
+.book h1, .book p {
+  margin: 1rem 2rem;
+  font-size: 12px;
+  font-weight: bold;
   z-index: 1000;
-
+  color: grey;
+  text-decoration: none;
 }
 
-.book h1 {
-
+.book strong {
+  color: black;
 }
 
-.book h2 {
+.book a {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  bottom: 0;
+  padding: 0.7rem 0;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1000;
+  color: white;
+  text-decoration: none;
+  background-color: #c1c9ff;
+}
 
+.book a:hover {
+  background-color: #a2adf7;
+}
+
+.book select {
+  position: absolute;
+  top: 0;
+  border: none;
+  padding: 0.5rem;
+  width: 100%;
+  z-index: 2000;
+}
+
+.book option {
+  border: none;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.book select:focus, .book option:focus {
+  outline: none;
 }

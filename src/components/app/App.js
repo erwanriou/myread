@@ -4,6 +4,7 @@ import './App.css';
 import Main from '../main/Main.js';
 import SearchBar from '../searchbar/SearchBar.js';
 import BooksList from '../bookslist/BooksList.js';
+import Footer from '../footer/Footer.js';
 import * as BookAPI from '../../util/bookAPI.js';
 // importing modules from node
 import { Route} from 'react-router-dom';
@@ -59,6 +60,10 @@ class App extends React.Component  {
             />
             <BooksList books={this.state.books}/>
           </div>
+        )} />
+        {/* Main landing page */}
+        <Route  path='/' render={() => (
+          <Footer />
         )} />
       </div>
     );
