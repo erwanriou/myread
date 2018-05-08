@@ -20,9 +20,18 @@ class Main extends React.Component {
           </Link>
         </header>
         <main>
-          <CRShelves />
-          <WTRShelves />
-          <RShelves />
+          <CRShelves
+            books={this.props.myBooks}
+            shelf={this.props.shelf}
+          />
+          <WTRShelves
+            books={this.props.myBooks}
+            shelf={this.props.shelf}
+          />
+          <RShelves
+            books={this.props.myBooks}
+            shelf={this.props.shelf}
+          />
         </main>
       </div>
     )

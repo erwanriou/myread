@@ -14,6 +14,8 @@ class App extends React.Component  {
     super(props)
     this.state = {
       books: [],
+      myBooks: [],
+      shelf: '',
       query: ''
     }
 
@@ -21,6 +23,12 @@ class App extends React.Component  {
     this.clearQuery = this.clearQuery.bind(this);
   }
 
+  componentDidMount() {
+    BookAPI.getAll()
+      .then((myBooks) => {
+        this.setState({myBooks});
+      })
+  }
 
   updateQuery = (query) => {
     this.setState(() => ({
@@ -49,7 +57,10 @@ class App extends React.Component  {
       <div>
         {/* Main landing page */}
         <Route exact path='/' render={() => (
-          <Main />
+          <Main
+            myBooks={this.state.myBooks}
+            shelf={this.state.shelf}
+          />
         )} />
         {/* Page to Search new books */}
         <Route exact path='/search' render={() => (

@@ -10,7 +10,6 @@
   border-radius: 1rem;
   filter:opacity(0.5);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-  transition: 0.2s linear;
 }
 
 .book:hover {
@@ -21,10 +20,11 @@
 .book img {
   position: relative;
   width: 100%;
-
 }
+
 .book .image {
   height: 8rem;
+  min-width: 100%;
   overflow: hidden;
 }
 
