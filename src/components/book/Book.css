@@ -4,14 +4,18 @@
   height: auto;
   overflow: hidden;
   justify-content: center;
-  margin-right: 1px;
-  margin-top: 1px;
-  background-color: #b5b5b5;
-  opacity: 0.5;
+  margin-right: 30px;
+  margin-top: 30px;
+  background-color: #6d6d6d;
+  border-radius: 1rem;
+  filter: grayscale(1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s linear;
 }
 
 .book:hover {
-  opacity: 1;
+  filter: grayscale(0);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
 .book img {

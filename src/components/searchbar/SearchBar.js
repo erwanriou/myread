@@ -1,22 +1,23 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './SearchBar.css';
 
 class SearchBar extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="header">
+        <Link
+          className='link'
+          to='/'>
+          Back
+        </Link>
         <input
           type="text"
           placeholder="Search"
           value={this.props.query}
           onChange={(event) => this.props.updateQuery(event.target.value)}
         />
-        <button
-          onClick={this.props.clearQuery}>
-          Show all
-        </button>
-
       </div>
     )
   }
