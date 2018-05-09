@@ -15,7 +15,6 @@ class App extends React.Component  {
     this.state = {
       books: [],
       myBooks: [],
-      shelf: '',
       query: ''
     }
 
@@ -59,7 +58,6 @@ class App extends React.Component  {
         <Route exact path='/' render={() => (
           <Main
             myBooks={this.state.myBooks}
-            shelf={this.state.shelf}
           />
         )} />
         {/* Page to Search new books */}

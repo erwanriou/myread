@@ -2,13 +2,17 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import './Main.css';
-import RShelves from '../rShelves/RShelves.js'
-import WTRShelves from '../wTRShelves/WTRShelves.js'
-import CRShelves from '../cRShelves/CRShelves.js'
+import BooksList from '../bookslist/BooksList.js';
+
 
 class Main extends React.Component {
 
   render () {
+
+    const curentlyReadingBooks = this.props.myBooks.filter(book => book.shelf === 'currentlyReading');
+    const readBooks = this.props.myBooks.filter(book => book.shelf === 'read');
+    const wantToReadBooks = this.props.myBooks.filter(book => book.shelf === 'wantToRead');
+
     return (
       <div>
         <header className='header'>
@@ -20,16 +24,16 @@ class Main extends React.Component {
           </Link>
         </header>
         <main>
-          <CRShelves
-            books={this.props.myBooks}
+          <BooksList
+            books={curentlyReadingBooks}
             shelf={this.props.shelf}
           />
-          <WTRShelves
-            books={this.props.myBooks}
+          <BooksList
+            books={readBooks}
             shelf={this.props.shelf}
           />
-          <RShelves
-            books={this.props.myBooks}
+          <BooksList
+            books={wantToReadBooks}
             shelf={this.props.shelf}
           />
         </main>
