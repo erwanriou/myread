@@ -13,7 +13,7 @@ class App extends React.Component  {
   constructor(props) {
     super(props)
     this.state = {
-      books: [],
+      searchBooks: [],
       myBooks: [],
       query: ''
     }
@@ -32,11 +32,11 @@ class App extends React.Component  {
       query: query.trim()
     }))
     if (this.state.query) {
-      const books = await BookAPI.search(this.state.query);
-      if (books.error) {
-        this.setState({books: []});
+      const searchBooks = await BookAPI.search(this.state.query);
+      if (searchBooks.error) {
+        this.setState({searchBooks: []});
       } else {
-        this.setState({books});
+        this.setState({searchBooks});
       }
     }
   }
@@ -66,7 +66,7 @@ class App extends React.Component  {
               query={this.state.query}
               updateQuery={this.updateQuery}
             />
-            <BooksList books={this.state.books}/>
+            <BooksList books={this.state.searchBooks}/>
           </div>
         )} />
         {/* Main landing page */}
