@@ -11,8 +11,9 @@ class BooksList extends React.Component {
           this.props.books.map(book => {
             return <Book
               book={book}
-              key={book.id}
               shelf={book.shelf}
+              onChange={this.props.updateShelf}
+              key={book.id}
             />;
           })
         }

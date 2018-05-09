@@ -9,6 +9,7 @@ class Main extends React.Component {
 
   render () {
 
+    //apply filter on each shelf
     const curentlyReadingBooks = this.props.myBooks.filter(book => book.shelf === 'currentlyReading');
     const readBooks = this.props.myBooks.filter(book => book.shelf === 'read');
     const wantToReadBooks = this.props.myBooks.filter(book => book.shelf === 'wantToRead');
@@ -24,17 +25,23 @@ class Main extends React.Component {
           </Link>
         </header>
         <main>
+          <h2>Curently Reading</h2>
           <BooksList
             books={curentlyReadingBooks}
             shelf={this.props.shelf}
+            updateShelf={this.props.updateShelf}
           />
-          <BooksList
-            books={readBooks}
-            shelf={this.props.shelf}
-          />
+          <h2>Want to Read</h2>
           <BooksList
             books={wantToReadBooks}
             shelf={this.props.shelf}
+            updateShelf={this.props.updateShelf}
+          />
+          <h2>Read</h2>
+          <BooksList
+            books={readBooks}
+            shelf={this.props.shelf}
+            updateShelf={this.props.updateShelf}
           />
         </main>
       </div>

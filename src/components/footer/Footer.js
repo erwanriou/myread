@@ -7,7 +7,7 @@ class Footer extends React.Component {
     return (
       <div className="footer">
         <p>To discover more projects, check my</p>
-        <a href="https://github.com/erwanriou/">GitHub</a>
+        <a href="https://github.com/erwanriou/" target='_blank'>GitHub</a>
       </div>
     )
   }

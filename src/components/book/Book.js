@@ -19,11 +19,16 @@ class Book extends React.Component {
   }
   //to avoid gigantics caps titles
   checkTitleLength() {
-    if (this.props.book.title.length < 50) {
+    if (this.props.book.title.length < 40) {
       return <h1>Title : <strong>{this.props.book.title}</strong></h1>
     } else {
       return <h1>Title : <strong>See Details</strong></h1>
     }
+  }
+
+  //to update the shelf
+  handleShelf(e) {
+    this.props.onChange(this.props.book, e.target.value);
   }
 
   render () {
@@ -42,8 +47,10 @@ class Book extends React.Component {
             Read More
           </a>
         </div>
-        <select id="selectShelvee">
-          <option value="none" selected disabled hidden>Move to...</option>
+        <select
+          defaultValue={this.props.book.shelf}
+          onChange={this.handleShelf}>
+          <option selected disabled hidden>Move to...</option>
           <option value="read" className="select">Read</option>
           <option value="wantToRead" className="select">Want to Read</option>
           <option value="currentlyReading" className="select">Curently Reading</option>

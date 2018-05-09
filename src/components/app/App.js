@@ -19,37 +19,35 @@ class App extends React.Component  {
     }
 
     this.updateQuery = this.updateQuery.bind(this);
-    this.clearQuery = this.clearQuery.bind(this);
+    this.updateShelf = this.updateShelf.bind(this);
   }
 
-  componentDidMount() {
-    BookAPI.getAll()
-      .then((myBooks) => {
-        this.setState({myBooks});
-      })
+  async componentDidMount() {
+    const myBooks = await BookAPI.getAll();
+    this.setState({myBooks});
   }
 
-  updateQuery = (query) => {
+  async updateQuery(query) {
     this.setState(() => ({
       query: query.trim()
     }))
-    if ((this.state.query)) {
-      BookAPI.search(this.state.query)
-        .then((books) => {
-          if (books.error) {
-            this.setState({books: []});
-          } else {
-            this.setState({books});
-          }
-        })
+    if (this.state.query) {
+      const books = await BookAPI.search(this.state.query);
+      if (books.error) {
+        this.setState({books: []});
+      } else {
+        this.setState({books});
+      }
     }
   }
 
-  clearQuery = (query) => {
-    this.updateQuery('')
+  async updateShelf(book, shelf) {
+    book.shelf = shelf;
+    const myBooks = await BookAPI.update(book, shelf);
+    this.setState({
+      myBooks: this.state.myBooks.filter(myBooks => myBooks.id ==! book.id).contact([book])
+    })
   }
-
-
 
   render() {
     return (
@@ -58,6 +56,7 @@ class App extends React.Component  {
         <Route exact path='/' render={() => (
           <Main
             myBooks={this.state.myBooks}
+            updateShelf={this.updateShelf}
           />
         )} />
         {/* Page to Search new books */}

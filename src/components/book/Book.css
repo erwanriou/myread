@@ -1,6 +1,6 @@
 .book {
   position: relative;
-  width: calc(10% - 1px);
+  width: calc(14% - 1px);
   height: auto;
   overflow: hidden;
   justify-content: center;
@@ -8,7 +8,7 @@
   margin-top: 30px;
   background-color: white;
   border-radius: 1rem;
-  filter:opacity(0.5);
+  filter:opacity(0.8);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 

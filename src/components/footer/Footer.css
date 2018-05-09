@@ -1,5 +1,16 @@
 .footer {
-  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #786e92;
   text-align: center;
   color: white;
+  height: 20rem;
+  margin-top: 5rem;
+  box-shadow: 0 0 10px 0 #333;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #c1c9ff;
 }
