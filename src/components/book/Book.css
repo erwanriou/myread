@@ -4,8 +4,7 @@
   height: auto;
   overflow: hidden;
   justify-content: center;
-  margin-right: 30px;
-  margin-top: 30px;
+  margin: 30px 15px 15px 15px;
   background-color: white;
   border-radius: 1rem;
   filter:opacity(0.8);
@@ -83,4 +82,23 @@
 
 .book select:focus, .book option:focus {
   outline: none;
+}
+
+
+@media only screen and (max-width: 1200px) and (min-width: 750px)  {
+  .book {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .book {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .book {
+    width: 80%;
+  }
 }

@@ -43,5 +43,19 @@ textarea:focus, input:focus{
 
 .link:hover {
   background-color: #a2adf7;
+}
 
+@media only screen and (max-width: 750px)  {
+  .header {
+    width: 100%;
+    flex-direction: column;
+    height: 10rem;
+  }
+
+  .header input, .header .link {
+    height: auto;
+    width: 80%;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
 }

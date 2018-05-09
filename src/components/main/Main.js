@@ -28,19 +28,16 @@ class Main extends React.Component {
           <h2>Curently Reading</h2>
           <BooksList
             books={curentlyReadingBooks}
-            shelf={this.props.shelf}
             updateShelf={this.props.updateShelf}
           />
           <h2>Want to Read</h2>
           <BooksList
             books={wantToReadBooks}
-            shelf={this.props.shelf}
             updateShelf={this.props.updateShelf}
           />
           <h2>Read</h2>
           <BooksList
             books={readBooks}
-            shelf={this.props.shelf}
             updateShelf={this.props.updateShelf}
           />
         </main>
