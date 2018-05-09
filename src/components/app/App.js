@@ -47,7 +47,7 @@ class App extends React.Component  {
       myBooks: newBooks.concat([book])
     });
     book.shelf = shelf;
-    const myBooks = await BookAPI.update(book, shelf);
+    await BookAPI.update(book, shelf);
   }
 
   render() {
@@ -67,7 +67,10 @@ class App extends React.Component  {
               query={this.state.query}
               updateQuery={this.updateQuery}
             />
-            <BooksList books={this.state.searchBooks}/>
+            <BooksList
+              books={this.state.searchBooks}
+              updateShelf={this.updateShelf}
+            />
           </div>
         )} />
         {/* Main landing page */}
