@@ -27,9 +27,7 @@ class Book extends React.Component {
   }
 
   //to update the shelf
-  handleShelf(e) {
-    this.props.onChange(this.props.book, e.target.value);
-  }
+
 
   render () {
     return (
@@ -49,7 +47,7 @@ class Book extends React.Component {
         </div>
         <select
           defaultValue={this.props.book.shelf}
-          onChange={this.handleShelf}>
+          onChange={(event) => this.props.updateShelf(this.props.book, event.target.value)}>
           <option selected disabled hidden>Move to...</option>
           <option value="read" className="select">Read</option>
           <option value="wantToRead" className="select">Want to Read</option>
