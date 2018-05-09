@@ -42,11 +42,12 @@ class App extends React.Component  {
   }
 
   async updateShelf(book, shelf) {
+    let newBooks = this.state.myBooks.filter(myBooks => myBooks.id !== book.id)
+    this.setState({
+      myBooks: newBooks.concat([book])
+    });
     book.shelf = shelf;
     const myBooks = await BookAPI.update(book, shelf);
-    this.setState({
-      myBooks: this.state.myBooks.filter(myBooks => myBooks.id ==! book.id).contact([book])
-    })
   }
 
   render() {
