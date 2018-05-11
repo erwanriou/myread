@@ -6,15 +6,11 @@ class Book extends React.Component {
 
   //function to check if thumbnail exist and remplace if not
   checkThumbnail() {
-    if (!this.props.book.imageLinks) {
-      return   <img
-          src={noImage}
-          alt={this.props.book.title}/>
-    } else {
-      return <img
-          src={this.props.book.imageLinks.thumbnail}
-          alt={this.props.book.title}/>
-    }
+    const { imageLinks, title } = this.props.book
+    const cover = imageLinks ? imageLinks.thumbnail : noImage
+    return <img
+      src={cover}
+      alt={title}/>
   }
   //to avoid gigantics caps titles
   checkTitleLength() {
@@ -27,25 +23,15 @@ class Book extends React.Component {
 
   //to update the shelf
   checkSelectDefaultValue() {
-    if (this.props.book.shelf) {
-      return <select
-        defaultValue={this.props.book.shelf}
-        onChange={(event) => this.props.updateShelf(this.props.book, event.target.value)}>
-        <option value="read" className="select">Read</option>
-        <option value="wantToRead" className="select">Want to Read</option>
-        <option value="currentlyReading" className="select">Curently Reading</option>
-        <option value="none">None</option>
-      </select>
-    } else {
-      return <select
-        defaultValue='Move to...'
-        onChange={(event) => this.props.updateShelf(this.props.book, event.target.value)}>
-        <option value="read" className="select">Read</option>
-        <option value="wantToRead" className="select">Want to Read</option>
-        <option value="currentlyReading" className="select">Curently Reading</option>
-        <option value="none">None</option>
-      </select>
-    }
+    const {shelf} = this.props.book
+    return <select
+      value={shelf ? shelf : 'none'}
+      onChange={(event) => this.props.updateShelf(this.props.book, event.target.value)}>
+      <option value="read" className="select">Read</option>
+      <option value="wantToRead" className="select">Want to Read</option>
+      <option value="currentlyReading" className="select">Curently Reading</option>
+      <option value="none">None</option>
+    </select>
   }
 
   render () {
