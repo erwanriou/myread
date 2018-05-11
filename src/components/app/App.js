@@ -35,6 +35,8 @@ class App extends React.Component  {
       const searchBooks = await BookAPI.search(this.state.query);
       if (searchBooks.error) {
         this.setState({searchBooks: []});
+      } else if (this.state.query === '') {
+        this.setState({searchBooks: []});
       } else {
         this.setState({searchBooks});
       }
