@@ -52,6 +52,20 @@ class App extends React.Component  {
     await BookAPI.update(book, shelf);
   }
 
+  checkResultFound() {
+    if (this.state.query === '') {
+      return <p
+        className="noresult">
+        No result Found
+      </p>
+    } else {
+      return <BooksList
+        books={this.state.searchBooks}
+        updateShelf={this.updateShelf}
+      />
+    }
+  }
+
   render() {
     return (
       <div>
@@ -69,10 +83,8 @@ class App extends React.Component  {
               query={this.state.query}
               updateQuery={this.updateQuery}
             />
-            <BooksList
-              books={this.state.searchBooks}
-              updateShelf={this.updateShelf}
-            />
+            {this.checkResultFound()}
+
           </div>
         )} />
         {/* Main landing page */}
