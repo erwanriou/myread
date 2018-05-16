@@ -6,4 +6,5 @@ body {
 .noresult {
   text-align: center;
   padding: 2rem;
+  width: 100%;
 }

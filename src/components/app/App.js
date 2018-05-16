@@ -34,7 +34,7 @@ class App extends React.Component  {
     if (this.state.query) {
       const searchBooks = await BookAPI.search(this.state.query);
       if (searchBooks.error) {
-        this.setState({searchBooks: []});
+        this.setState({searchBooks: 'No result Found'});
       } else if (this.state.query === '') {
         this.setState({searchBooks: []});
       } else {
@@ -84,7 +84,6 @@ class App extends React.Component  {
               updateQuery={this.updateQuery}
             />
             {this.checkResultFound()}
-
           </div>
         )} />
         {/* Main landing page */}
